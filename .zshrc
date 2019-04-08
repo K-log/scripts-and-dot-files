@@ -97,5 +97,6 @@ fi
 
 alias cnc="cd ~/Desktop/cnc-notes-and-homework"
 alias python="python3"
+alias pip="pip3"
 
 # synclient MaxTapTime=0
