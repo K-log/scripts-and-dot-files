@@ -15,6 +15,10 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'Valloric/YouCompleteMe'
 
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'ternjs/tern_for_vim'
+
 call plug#end()
 
 
