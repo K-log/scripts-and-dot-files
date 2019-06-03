@@ -25,7 +25,7 @@ call plug#end()
 set termguicolors
 set number
 colorscheme NeoSolarized
-set background=light
+set background=dark
 
 " 4 space tabs expanded to spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
