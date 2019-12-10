@@ -4,12 +4,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -106,7 +105,6 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cnc="cd ~/Desktop/cnc-notes-and-homework"
-alias python="python3"
 alias vim="nvim"
 
 eval $(thefuck --alias)
@@ -116,4 +114,9 @@ eval $(thefuck --alias)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# .zshrc
+fpath+=("$HOME/.zsh/pure")
+autoload -U promptinit; promptinit
+prompt pure
 

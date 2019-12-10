@@ -1,6 +1,6 @@
 call plug#begin()
 
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 Plug 'itchyny/lightline.vim'
 
@@ -17,7 +17,12 @@ Plug 'Valloric/YouCompleteMe'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'ternjs/tern_for_vim'
+"No longer maintained
+"Plug 'ternjs/tern_for_vim'
+
+Plug 'yuezk/vim-js'
+
+Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 
@@ -28,12 +33,11 @@ colorscheme NeoSolarized
 set background=dark
 
 " 4 space tabs expanded to spaces
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 
 tnoremap <Esc> <C-\><C-n>
-
-
+set clipboard+=unnamedplus
 
 " default value is "normal", Setting this option to "high" or "low" does use the 
 " same Solarized palette but simply shifts some values up or down in order to 
@@ -77,5 +81,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 
-
+" Vim JSX
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
