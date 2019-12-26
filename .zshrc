@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
+if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
    export EDITOR='nvim'
@@ -104,8 +104,12 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias cnc="cd ~/Desktop/cnc-notes-and-homework"
-alias vim="nvim"
+alias copy="xclip -rmlastnl -selection clipboard"
+alias past="xclip -o -rmlastnl -selection clipboard"
+alias rm="rm -i"
+alias vim="vim"
+
+alias solar-ui="cd ~/Projects/DroneBase/solar-ui/"
 
 eval $(thefuck --alias)
 
@@ -119,4 +123,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 fpath+=("$HOME/.zsh/pure")
 autoload -U promptinit; promptinit
 prompt pure
+
+
+export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.gem/ruby/2.6.0/bin:$HOME/go/bin"
 

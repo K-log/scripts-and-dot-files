@@ -1,28 +1,39 @@
 call plug#begin()
 
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-
-Plug 'itchyny/lightline.vim'
-
-Plug 'ervandew/supertab'
-
+"Plug 'itchyny/lightline.vim'
+"
 Plug 'iCyMind/NeoSolarized'
 
+Plug 'vim-airline/vim-airline'
+
+Plug 'vim-airline/vim-airline-themes'
+
 Plug 'tpope/vim-eunuch' 
+
+Plug 'christoomey/vim-tmux-navigator'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
+"
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'wellle/tmux-complete.vim'
 
-"No longer maintained
-"Plug 'ternjs/tern_for_vim'
+Plug 'ervandew/supertab'
 
 Plug 'yuezk/vim-js'
 
 Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
 
 call plug#end()
 
@@ -84,3 +95,29 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 " Vim JSX
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
+" Airline themes
+let g:airline_theme='solarized'
+let g:airline_solarize_bg='dark'
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+let g:tmuxcomplete#trigger = ''
+
+" Language Client
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
