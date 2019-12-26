@@ -107,7 +107,6 @@ fi
 alias copy="xclip -rmlastnl -selection clipboard"
 alias past="xclip -o -rmlastnl -selection clipboard"
 alias rm="rm -i"
-alias vim="vim"
 
 alias solar-ui="cd ~/Projects/DroneBase/solar-ui/"
 
