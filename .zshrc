@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +70,6 @@ plugins=(
     command-not-found     
     tmux
     vscode
-    thefuck 
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,10 +107,6 @@ alias copy="xclip -rmlastnl -selection clipboard"
 alias past="xclip -o -rmlastnl -selection clipboard"
 alias rm="rm -i"
 
-alias solar-ui="cd ~/Projects/DroneBase/solar-ui/"
-
-eval $(thefuck --alias)
-
 # synclient MaxTapTime=0
 
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -119,10 +114,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # .zshrc
-fpath+=("$HOME/.zsh/pure")
-autoload -U promptinit; promptinit
-prompt pure
-
-
-export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.gem/ruby/2.6.0/bin:$HOME/go/bin"
-
+#fpath+=("$HOME/.zsh/pure")
+#autoload -U promptinit; promptinit
+#prompt pure

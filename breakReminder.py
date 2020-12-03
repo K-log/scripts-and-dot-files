@@ -16,7 +16,7 @@ def main():
 
     startTime = datetime.datetime.now().replace(hour=9, minute=0, second=0, microsecond=0)
 
-    scheduler.add_job(displayNotification, "interval", hours=1) 
+    scheduler.add_job(displayNotification, "interval", hours=2) 
 
     print("Press CTRL-C to stop the job.")
 
