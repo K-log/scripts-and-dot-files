@@ -45,6 +45,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Allows running things like :SudaEdit ... 
+Plug 'lambdalisue/suda.vim'
+
 call plug#end()
 
 
@@ -52,6 +55,7 @@ set termguicolors
 set number
 colorscheme NeoSolarized
 set background=dark
+set encoding=UTF-8 "no required for neovim
 
 " 4 space tabs expanded to spaces
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
